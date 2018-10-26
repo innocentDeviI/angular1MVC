@@ -1,0 +1,137 @@
+
+
+<!-- The Delete Modal -->
+<div class="modal fade" id="deleteModal" ng-init="enableMenu=false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Mobile</h4>
+                <span class="fa fa-close close" data-dismiss="modal"></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Are you sure you want to delete <strong>{{selectedMobile.modalName}}?</strong>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" ng-click="deleteMobile()" data-dismiss="modal">Delete</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Edit Modal -->
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">{{selectedMobile.modalName}}</h4>
+                <span class="fa fa-close close" data-dismiss="modal"></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Address:</label><input type="text" ng-model="selectedMobile.address" value="{{selectedMobile.address}}" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Available colors:</label><input type="text" ng-model="selectedMobile.colors" value="{{selectedMobile.colors}}" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Company:</label><input type="text" ng-model="selectedMobile.company" value="{{selectedMobile.company}}" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Description:</label><input type="text" ng-model="selectedMobile.description" value="{{selectedMobile.description}}" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Original price:</label><input type="text" ng-model="selectedMobile.price" value="{{selectedMobile.price}}" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Discounted Price:</label><input type="text" ng-model="selectedMobile.discountedPrice"
+                            value="{{selectedMobile.discountedPrice}}" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Availablity:</label><input type="text" ng-model="selectedMobile.isAvailable" value="{{selectedMobile.isAvailable}}" />
+
+                    </div>
+                    <div class="col-md-4">
+                        <label>Manufectured Date:</label><input type="text" ng-model="selectedMobile.manufecturedDate"
+                            value="{{selectedMobile.manufecturedDate}}" />
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Modal Name:</label><input type="text" ng-model="selectedMobile.modalName" value="{{selectedMobile.modalName}}" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Image:</label><input type="text" ng-model="selectedMobile.picture" value="{{selectedMobile.picture}}" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Ratings:</label><input type="text" ng-model="selectedMobile.ratings" value="{{selectedMobile.ratings}}" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>warrenty:</label><input type="text" ng-model="selectedMobile.warrenty" value="{{selectedMobile.warrenty}}" />
+                    </div>
+                </div>
+                <br />
+                Features:
+                <br />
+                <div class="row">
+                    <div class="col-md-4"><label>Bettery: </label><input type="text" name="" ng-model="selectedMobile.features.bettery"
+                            value="{{selectedMobile.features.bettery}}" /></div>
+                    <div class="col-md-4"><label>Display: </label><input type="text" name="" ng-model="selectedMobile.features.display"
+                            value="{{selectedMobile.features.display}}" /></div>
+                    <div class="col-md-2">
+                        <label>Camera Front: </label>
+                        <input type="text" name="" ng-model="selectedMobile.features.camera.front" value="{{selectedMobile.features.camera.front}}"
+                            style="width:90px" />
+                    </div>
+                    <div class="col-md-2">
+                        <label>Camera Rear: &nbsp;</label>
+                        <input type="text" name="" ng-model="selectedMobile.features.camera.rear" value="{{selectedMobile.features.camera.rear}}"
+                            style="width:90px" />
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4"><label>OpratingSystem: </label>
+                        <input type="text" ng-model="selectedMobile.features.opratingSystem" value="{{selectedMobile.features.opratingSystem}}" /></div>
+                    <div class="col-md-4"><label>Ram: &nbsp;&nbsp;&nbsp; </label>
+                        <input type="text" ng-model="selectedMobile.features.ram" value="{{selectedMobile.features.ram}}" /></div>
+                    <div class="col-md-4"><label>Rom: &nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" ng-model="selectedMobile.features.rom" value="{{selectedMobile.features.rom}}" /></div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" ng-click=" addflag ? addMobile() : updateMobile()"
+                    data-dismiss="modal">{{addflag ? 'Add' : 'Update'}}</button>
+            </div>
+        </div>
+    </div>
+</div>

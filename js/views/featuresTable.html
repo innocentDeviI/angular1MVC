@@ -1,0 +1,7 @@
+<table class="table table-striped">
+    <tr ng-repeat="(key, value) in mobile">
+        <td><strong>{{key}}</strong></td>
+        <td>{{ (key == 'camera') ? ' Front: '+ value.front +'MP Rear: '+ value.rear +
+            'MP' : value }}</td>
+    </tr>
+</table>

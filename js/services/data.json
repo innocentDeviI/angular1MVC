@@ -1,0 +1,210 @@
+[
+    {
+        "_id": "5bcead3758db0d970bbc147f",
+        "isAvailable": true,
+        "price": "$36,183.21",
+        "discountedPrice": "$3,748.12",
+        "picture": "./images/a1.jpeg",
+        "warrenty": 2,
+        "colors": "blue",
+        "modalName": "MI A1",
+        "company": "ZIGGLES",
+        "address": "851 Hawthorne Street, Aurora, South Dakota, 4729",
+        "description": "Amet consectetur duis dolore velit culpa ea tempor mollit proident laboris officia aliqua mollit. Ipsum occaecat reprehenderit sint pariatur in incididunt labore dolor. Esse ipsum pariatur aute sunt exercitation commodo ex incididunt qui irure. Lorem labore nulla deserunt amet. Reprehenderit dolore exercitation proident cillum pariatur adipisicing eiusmod pariatur irure.\r\n",
+        "manufecturedDate": "2016-06-14T11:52:58 -06:-30",
+        "features": {
+            "ram": 4,
+            "rom": 64,
+            "camera": {
+                "front": 8,
+                "rear": 16
+            },
+            "display": "1080x1920",
+            "opratingSystem": "android 6.0",
+            "bettery": 1325
+        },
+        "ratings": 3
+    },
+    {
+        "_id": "5bcead37b33f3638be9419a5",
+        "isAvailable": false,
+        "price": "$36,974.79",
+        "discountedPrice": "$3,482.95",
+        "picture": "./images/a2.jpeg",
+        "warrenty": 2,
+        "colors": "black",
+        "modalName": "MI A2",
+        "company": "GUSHKOOL",
+        "address": "401 Evergreen Avenue, Bannock, West Virginia, 251",
+        "description": "Proident commodo fugiat in nulla elit cillum laborum consectetur consectetur amet. Exercitation voluptate ad anim et elit dolore incididunt aliqua veniam consectetur. Esse ut excepteur exercitation eiusmod commodo irure nisi ut consectetur voluptate.\r\n",
+        "manufecturedDate": "2016-04-27T08:15:32 -06:-30",
+        "features": {
+            "ram": 6,
+            "rom": 64,
+            "camera": {
+                "front": 16,
+                "rear": 32
+            },
+            "display": "920x1900",
+            "opratingSystem": "android 7.0",
+            "bettery": 2531
+        },
+        "ratings": 0
+    },
+    {
+        "_id": "5bcead372d09b8d63dd53ba6",
+        "isAvailable": true,
+        "price": "$14,110.19",
+        "discountedPrice": "$3,977.74",
+        "picture": "./images/note6pro.jpeg",
+        "warrenty": 2,
+        "colors": "blue",
+        "modalName": "NOTE 6 Pro",
+        "company": "NEPTIDE",
+        "address": "628 Chester Court, Wyano, American Samoa, 6088",
+        "description": "Minim irure sunt sunt ullamco ex exercitation eiusmod velit. Enim velit sit voluptate ut ea. Mollit eiusmod mollit aliquip magna sunt officia sint elit ipsum exercitation. Tempor laborum laborum ex voluptate consequat consequat laborum dolore.\r\n",
+        "manufecturedDate": "2018-10-18T04:50:06 -06:-30",
+        "features": {
+            "ram": 32,
+            "rom": 128,
+            "camera": {
+                "front": 3.2,
+                "rear": 16
+            },
+            "display": "920x1900",
+            "opratingSystem": "android 7.0",
+            "bettery": 1489
+        },
+        "ratings": 4
+    },
+    {
+        "_id": "5bcead37b8be90f19ff56c01",
+        "isAvailable": true,
+        "price": "$17,893.60",
+        "discountedPrice": "$2,556.93",
+        "picture": "./images/y2.jpeg",
+        "warrenty": 4,
+        "colors": "white",
+        "modalName": "MI Y2",
+        "company": "EMTRAK",
+        "address": "301 Bay Avenue, Frystown, Federated States Of Micronesia, 3880",
+        "description": "Cupidatat aliquip sit pariatur labore eiusmod est nisi voluptate. Culpa Lorem ut deserunt nisi sint laborum fugiat cillum cupidatat Lorem. Elit non deserunt tempor non pariatur. Voluptate pariatur consequat quis exercitation sint minim laboris ex qui in cillum incididunt commodo dolore. Eiusmod elit ea ex sint. Consectetur tempor nulla laboris reprehenderit nulla elit laboris laborum.\r\n",
+        "manufecturedDate": "2017-10-24T10:40:55 -06:-30",
+        "features": {
+            "ram": 16,
+            "rom": 32,
+            "camera": {
+                "front": 8,
+                "rear": 20
+            },
+            "display": "1080x1920",
+            "opratingSystem": "android 5.0",
+            "bettery": 3483
+        },
+        "ratings": 5
+    },
+    {
+        "_id": "5bcead37ddeb3625d521b819",
+        "isAvailable": false,
+        "price": "$16,793.37",
+        "discountedPrice": "$1,916.67",
+        "picture": "./images/y1.jpeg",
+        "warrenty": 4,
+        "colors": "white",
+        "modalName": "MI Y1",
+        "company": "ECLIPTO",
+        "address": "683 Ash Street, Kieler, Ohio, 7390",
+        "description": "Ea do nostrud irure culpa sunt officia. Culpa cillum sint sint ut eu laboris occaecat sit fugiat amet consectetur dolor dolor. Ullamco amet laborum tempor mollit laboris tempor excepteur exercitation non sunt aliqua dolor Lorem consequat.\r\n",
+        "manufecturedDate": "2018-03-09T06:17:02 -06:-30",
+        "features": {
+            "ram": 8,
+            "rom": 64,
+            "camera": {
+                "front": 20,
+                "rear": 12
+            },
+            "display": "920x1900",
+            "opratingSystem": "android 5.0",
+            "bettery": 3570
+        },
+        "ratings": 0
+    },
+    {
+        "_id": "5bcead370a160ba876c54cce",
+        "isAvailable": true,
+        "price": "$2,137.94",
+        "discountedPrice": "$2,196.31",
+        "picture": "./images/redmi6.jpeg",
+        "warrenty": 5,
+        "colors": "brown",
+        "modalName": "REDMI 6",
+        "company": "ZILCH",
+        "address": "649 Cypress Court, Cedarville, Michigan, 1179",
+        "description": "Veniam laboris aute aute dolore mollit. Occaecat ullamco anim aliqua excepteur Lorem ullamco aliquip sint nulla reprehenderit ad ea. Consequat reprehenderit veniam ex officia sunt exercitation duis nostrud et elit consequat labore aute eu. Exercitation aliquip est cupidatat enim elit ipsum esse.\r\n",
+        "manufecturedDate": "2016-12-21T05:42:25 -06:-30",
+        "features": {
+            "ram": 4,
+            "rom": 16,
+            "camera": {
+                "front": 20,
+                "rear": 16
+            },
+            "display": "720x1080",
+            "opratingSystem": "android 7.0",
+            "bettery": 3769
+        },
+        "ratings": 1
+    },
+    {
+        "_id": "5bcead37dbf70284f04bf489",
+        "isAvailable": false,
+        "price": "$6,977.29",
+        "discountedPrice": "$2,799.98",
+        "picture": "./images/note4.jpeg",
+        "warrenty": 3,
+        "colors": "brown",
+        "modalName": "NOTE 4",
+        "company": "ZIDANT",
+        "address": "572 Mill Avenue, Needmore, Utah, 946",
+        "description": "Qui ex amet do quis. Proident Lorem ea voluptate aute laboris dolor ullamco duis aliquip anim irure id elit. Deserunt dolore elit sunt cupidatat aliquip velit et ipsum do minim sit mollit tempor. Consequat ullamco tempor nulla aliqua eu consequat excepteur excepteur. Nostrud amet Lorem do tempor ex commodo anim nostrud irure commodo.\r\n",
+        "manufecturedDate": "2017-08-21T06:26:54 -06:-30",
+        "features": {
+            "ram": 8,
+            "rom": 128,
+            "camera": {
+                "front": 20,
+                "rear": 20
+            },
+            "display": "920x1900",
+            "opratingSystem": "android 5.0",
+            "bettery": 1168
+        },
+        "ratings": 2
+    },
+    {
+        "_id": "5bcead377dd19f877bf65f23",
+        "isAvailable": true,
+        "price": "$19,777.83",
+        "discountedPrice": "$2,766.07",
+        "picture": "./images/note5.jpeg",
+        "warrenty": 2,
+        "colors": "brown",
+        "modalName": "NOTE 5 Pro",
+        "company": "ZILENCIO",
+        "address": "765 Lombardy Street, Trexlertown, Arkansas, 7248",
+        "description": "Sit laboris sit sunt esse cillum occaecat sit. Voluptate ea aliquip dolor sint minim deserunt excepteur laborum officia veniam cillum Lorem. Labore duis ut id ipsum proident aute deserunt aliqua. Ea eiusmod dolore est aute enim. Dolor ea adipisicing eu duis minim occaecat incididunt do ipsum in. Veniam et incididunt anim irure ullamco occaecat nulla laborum. Nisi sunt nostrud mollit laboris aliquip amet ipsum.\r\n",
+        "manufecturedDate": "2014-04-08T09:55:30 -06:-30",
+        "features": {
+            "ram": 16,
+            "rom": 128,
+            "camera": {
+                "front": 8,
+                "rear": 6
+            },
+            "display": "920x1900",
+            "opratingSystem": "android 6.0",
+            "bettery": 2662
+        },
+        "ratings": 3
+    }
+]

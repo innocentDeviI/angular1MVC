@@ -1,0 +1,86 @@
+<section id="main" ng-show="mobiles.length" ng-cloak class="container accordion" ng-init="add=false">
+    <!-- <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+            <label for="toggle-all">Mark all as complete</label> -->
+    <h2>Mobiles</h2>
+    <h6 class="text-right more" data-toggle="modal" data-target="#editModal" ng-click="addClick(); add = true;">
+        Add Mobile
+    </h6>
+    <article class="row" ng-repeat="mobile in mobiles track by $index">
+        <div class="card">
+            <div class="card-header row" id="heading{{mobile.company}}">
+                <h5 class="col-md-4">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#{{mobile.company}}"
+                        aria-expanded="true" aria-controls="{{mobile.company}}">
+                        {{mobile.company}} {{mobile.modalName}} </strong>
+                    </button>
+                    <p class="ng-class: mobile.isAvailable == true ? 'badge green-bg' : 'red-bg badge' ">{{mobile.isAvailable
+                        == true ? 'Available' : 'Not Available'}}</p>
+                </h5>
+                <div class="text-center col-md-4">
+                    <span ng-repeat="n in [1,2,3,4,5] track by $index">
+                        <span class="ng-class: ($index >= mobile.ratings) ? 'fa fa-star': 'fa fa-star filled'"></span>
+                    </span>
+                </div>
+                <div class="text-right col-md-4 align-middle" ng-init="enableMenu = false">
+                    <span class="fa fa-ellipsis-v more" ng-click="enableMenu = !enableMenu"></span>
+                </div>
+                <div class="vertical-menu">
+                    <ul ng-show="enableMenu">
+                        <li class="fa fa-edit" data-id="{{mobile._id}}" ng-click="actionSelection($event)" data-toggle="modal"
+                            data-target="#editModal"> Edit</li>
+                        <li class="fa fa-close" data-id="{{mobile._id}}" ng-click="actionSelection($event)" data-toggle="modal"
+                            data-target="#deleteModal"> Delete</li>
+                    </ul>
+                    <div>
+
+                        <modals add="addMobile()" update="updateMobile()" delete="deleteMobile()" selectedmobile="selectedMobile"
+                            modal="edit" addflag="add"></modals>
+                    </div>
+                </div>
+            </div>
+            <div id="{{mobile.company}}" class="ng-class: $index == 0 ? 'collapse show': 'collapse';" aria-labelledby="heading{{mobile.company}}"
+                data-parent="#main">
+                <div class="card-body row">
+                    <div class="mobile-image col-md-4">
+                        <img ng-src="{{mobile.picture}}" width="250px">
+                    </div>
+                    <div class="mobile-details col-md-8">
+                        <div class="mobile-price">
+                            <h2 class="green">{{mobile.discountedPrice}}</h2>
+                            <h5 class="red strikethrough">{{mobile.price}}</h5>
+                        </div>
+                        <div class="warrenty">
+                            <p> <strong>Warrenty: </strong>
+                                <span>{{mobile.warrenty}} - Years </span>
+                            </p>
+                        </div>
+                        <div class="description">
+                            <p> <strong>Description:</strong>
+                                <span>{{mobile.description}}</span>
+                            </p>
+                        </div>
+                        <div class="features">
+                            <p> <strong>Features:</strong> </p>
+                            <features modal="mobile.features"></features>
+                        </div>
+                        <div class="release-date">
+                            <p> <strong>Release Date:</strong>
+                                <span>{{mobile.manufecturedDate}}</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p> <strong>Available Shades: </strong>
+                                <span class="ng-class: mobile.colors ">{{mobile.colors}}</span>
+                            </p>
+                        </div>
+                        <div class="address">
+                            <p> <strong>Seller's Address: </strong>
+                                <span>{{mobile.address}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
