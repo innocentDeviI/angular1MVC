@@ -37,6 +37,21 @@ angular.module('mobileMVC', ['ngRoute'])
 					}
 				}
 			})
+			.when('/showcart', {
+				templateUrl: '../../excercises/angular1MVC/js/views/cartDetails.html',
+				controller: 'cartDetailsCtrl',
+				bindings: {
+					mobile: '<'
+				},
+				resolve: {
+					/* store: function (mobileStorage) {
+						// Get the correct module (API or localStorage).
+						return mobileStorage.then(function (module) {
+							return module.getSelectedMobile(); // Fetch the selected mobile records in the background.
+						});
+					} */
+				}
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

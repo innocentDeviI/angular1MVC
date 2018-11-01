@@ -60,7 +60,7 @@ angular.module('mobileMVC')
 			}
 		}
 		$scope.showCart = function() {
-			
+			this.$router.navigate(['cartDetailsCtrl']);
 		}
 		$scope.addMobile = function () {
 			var obj = {
