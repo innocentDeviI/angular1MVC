@@ -2,7 +2,7 @@ angular.module('mobileMVC')
     .directive('features', function () {
     var directive = {};
     directive.restrict = 'E';
-    directive.templateUrl = "./js/views/featuresTable.html";
+    directive.templateUrl = "../../excercises/angular1MVC/js/views/featuresTable.html";
 
     directive.scope = {
         mobile: "=modal"

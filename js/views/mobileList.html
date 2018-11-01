@@ -58,7 +58,7 @@
                             <p> <strong>Description:</strong>
                                 <span>{{mobile.description}}</span>
                             </p>
-                            <p><a href="#" ng-link="['mobileDetails', {id: mobile._id}]">View Details</a></p>
+                            <p><a href="../../../../excercises/angular1MVC/mobile/{{mobile._id}}" data-id="{{mobile._id}}" ng-click="actionSelection($event)">View Details</a></p>
                         </div>
                         <div class="features">
                             <p> <strong>Features:</strong> </p>

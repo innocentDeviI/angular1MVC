@@ -1,1 +1,60 @@
-<h1>Its working</h1>
+<div class="container">
+    <div class="row card-header">
+        <h5 class="col-md-4">
+            <button class="btn btn-link" type="button">
+                {{selectedMobile.company}} {{selectedMobile.modalName}} </strong>
+            </button>
+            <p class="ng-class: selectedMobile.isAvailable == true ? 'badge green-bg' : 'red-bg badge' ">{{selectedMobile.isAvailable
+                == true ? 'Available' : 'Not Available'}}</p>
+        </h5>
+        <div class="text-right col-md-8">
+            <span ng-repeat="n in [1,2,3,4,5] track by $index">
+                <span class="ng-class: ($index >= selectedMobile.ratings) ? 'fa fa-star': 'fa fa-star filled'"></span>
+            </span>
+        </div>
+        
+    </div>
+    <div id="{{selectedMobile.company}}">
+        <div class="card-body row">
+            <div class="mobile-image col-md-4">
+                <img ng-src="{{selectedMobile.picture}}" width="250px">
+            </div>
+            <div class="mobile-details col-md-8">
+                <div class="mobile-price">
+                    <h2 class="green">{{selectedMobile.discountedPrice}}</h2>
+                    <h5 class="red strikethrough">{{selectedMobile.price}}</h5>
+                </div>
+                <div class="warrenty">
+                    <p> <strong>Warrenty: </strong>
+                        <span>{{selectedMobile.warrenty}} - Years </span>
+                    </p>
+                </div>
+                <div class="description">
+                    <p> <strong>Description:</strong>
+                        <span>{{selectedMobile.description}}</span>
+                    </p>
+
+                </div>
+                <div class="features">
+                    <p> <strong>Features:</strong> </p>
+                    <features modal="selectedMobile.features"></features>
+                </div>
+                <div class="release-date">
+                    <p> <strong>Release Date:</strong>
+                        <span>{{selectedMobile.manufecturedDate}}</span>
+                    </p>
+                </div>
+                <div>
+                    <p> <strong>Available Shades: </strong>
+                        <span class="ng-class: selectedMobile.colors ">{{selectedMobile.colors}}</span>
+                    </p>
+                </div>
+                <div class="address">
+                    <p> <strong>Seller's Address: </strong>
+                        <span>{{selectedMobile.address}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

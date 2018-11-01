@@ -6,7 +6,7 @@
  * - exposes the model to the template and provides event handlers
  */
 angular.module('mobileMVC')
-	.controller('MobileCtrl', function MobileCtrl($scope, $routeParams, $filter, store) {
+	.controller('MobileCtrl', function MobileCtrl($scope, $routeParams, store) {
 		'use strict';
 
 		var mobiles = $scope.mobiles = store.mobiles;
@@ -16,18 +16,12 @@ angular.module('mobileMVC')
 		$scope.enableMenu = false;
 		$scope.selectedMobile = {};
 
-		/* $scope.$watch('mobiles', function () {
-			$scope.remainingCount = $filter('filter')(mobiles, { completed: false }).length;
-			$scope.completedCount = mobiles.length - $scope.remainingCount;
-			$scope.allChecked = !$scope.remainingCount;
-		}, true); */
-
 		// Monitor the current route for changes and adjust the filter accordingly.
 		$scope.$on('$routeChangeSuccess', function () {
 			var status = $scope.status = $routeParams.status || '';
 			$scope.statusFilter = (status === 'active') ?
 				{ completed: false } : (status === 'completed') ?
-				{ completed: true } : {};
+					{ completed: true } : {};
 		});
 
 		$scope.actionSelection = function (evt) {
@@ -36,6 +30,7 @@ angular.module('mobileMVC')
 			$scope.selectedMobile = {};
 			$scope.selectedMobileId = $(evt.target).attr("data-id");
 			$scope.selectedMobile = mobiles.find(function (x, i) { $scope.selectedMobileIndex = i; return x._id === $scope.selectedMobileId });
+			store.setSelectedMobile($scope.selectedMobile);
 		}
 		$scope.addClick = function () {
 			$scope.add = true;
@@ -68,7 +63,7 @@ angular.module('mobileMVC')
 				"ratings": $scope.selectedMobile.ratings,
 				"warrenty": $scope.selectedMobile.warrenty,
 				"_id": Math.random().toString(36)
-			} 
+			}
 			$scope.mobiles.push(obj);
 			$scope.selectedMobile = {};
 		}
@@ -79,7 +74,7 @@ angular.module('mobileMVC')
 			$scope.selectedMobile = null;
 		}
 
-	    $scope.deleteMobile = function () {
+		$scope.deleteMobile = function () {
 			$scope.mobiles.splice($scope.selectedMobileIndex, 1);
 			$scope.enableMenu = false;
 		}
