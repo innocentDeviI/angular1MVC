@@ -15,6 +15,7 @@ angular.module('mobileMVC')
 		$scope.editedMobile = null;
 		$scope.enableMenu = false;
 		$scope.selectedMobile = {};
+		$scope.cartItemsCount = 0;
 
 		/* $scope.$watch('mobiles', function () {
 			$scope.remainingCount = $filter('filter')(mobiles, { completed: false }).length;
@@ -41,6 +42,30 @@ angular.module('mobileMVC')
 			$scope.add = true;
 			$scope.selectedMobile = {};
 			$scope.selectedMobileId = null;
+		}
+		$scope.addToCart= function(mobile) {
+			if(mobile.isAvailable) {
+				if( mobile.isAddedToCart == false ) mobile.isAddedToCart = true;
+				$scope.cartItemsCount += 1;
+				mobile.addedItemCount += 1;
+			}
+		}
+		$scope.removeFromCart= function(mobile) {
+			if(mobile.isAvailable) {
+				if( mobile.isAddedToCart == false ) mobile.isAddedToCart = true;
+				if($scope.cartItemsCount > 0 && mobile.addedItemCount > 0) {
+					$scope.cartItemsCount -= 1;
+					mobile.addedItemCount -= 1;
+					if(mobile.addedItemCount == 0)
+						mobile.isAddedToCart = false;	
+				} else {
+					mobile.isAddedToCart = false;
+				}
+
+			}
+		}
+		$scope.showCart = function() {
+			
 		}
 		$scope.addMobile = function () {
 			var obj = {

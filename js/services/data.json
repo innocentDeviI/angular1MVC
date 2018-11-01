@@ -12,6 +12,8 @@
         "address": "851 Hawthorne Street, Aurora, South Dakota, 4729",
         "description": "Amet consectetur duis dolore velit culpa ea tempor mollit proident laboris officia aliqua mollit. Ipsum occaecat reprehenderit sint pariatur in incididunt labore dolor. Esse ipsum pariatur aute sunt exercitation commodo ex incididunt qui irure. Lorem labore nulla deserunt amet. Reprehenderit dolore exercitation proident cillum pariatur adipisicing eiusmod pariatur irure.\r\n",
         "manufecturedDate": "2016-06-14T11:52:58 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 4,
             "rom": 64,
@@ -38,6 +40,8 @@
         "address": "401 Evergreen Avenue, Bannock, West Virginia, 251",
         "description": "Proident commodo fugiat in nulla elit cillum laborum consectetur consectetur amet. Exercitation voluptate ad anim et elit dolore incididunt aliqua veniam consectetur. Esse ut excepteur exercitation eiusmod commodo irure nisi ut consectetur voluptate.\r\n",
         "manufecturedDate": "2016-04-27T08:15:32 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 6,
             "rom": 64,
@@ -64,6 +68,8 @@
         "address": "628 Chester Court, Wyano, American Samoa, 6088",
         "description": "Minim irure sunt sunt ullamco ex exercitation eiusmod velit. Enim velit sit voluptate ut ea. Mollit eiusmod mollit aliquip magna sunt officia sint elit ipsum exercitation. Tempor laborum laborum ex voluptate consequat consequat laborum dolore.\r\n",
         "manufecturedDate": "2018-10-18T04:50:06 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 32,
             "rom": 128,
@@ -90,6 +96,8 @@
         "address": "301 Bay Avenue, Frystown, Federated States Of Micronesia, 3880",
         "description": "Cupidatat aliquip sit pariatur labore eiusmod est nisi voluptate. Culpa Lorem ut deserunt nisi sint laborum fugiat cillum cupidatat Lorem. Elit non deserunt tempor non pariatur. Voluptate pariatur consequat quis exercitation sint minim laboris ex qui in cillum incididunt commodo dolore. Eiusmod elit ea ex sint. Consectetur tempor nulla laboris reprehenderit nulla elit laboris laborum.\r\n",
         "manufecturedDate": "2017-10-24T10:40:55 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 16,
             "rom": 32,
@@ -116,6 +124,8 @@
         "address": "683 Ash Street, Kieler, Ohio, 7390",
         "description": "Ea do nostrud irure culpa sunt officia. Culpa cillum sint sint ut eu laboris occaecat sit fugiat amet consectetur dolor dolor. Ullamco amet laborum tempor mollit laboris tempor excepteur exercitation non sunt aliqua dolor Lorem consequat.\r\n",
         "manufecturedDate": "2018-03-09T06:17:02 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 8,
             "rom": 64,
@@ -142,6 +152,8 @@
         "address": "649 Cypress Court, Cedarville, Michigan, 1179",
         "description": "Veniam laboris aute aute dolore mollit. Occaecat ullamco anim aliqua excepteur Lorem ullamco aliquip sint nulla reprehenderit ad ea. Consequat reprehenderit veniam ex officia sunt exercitation duis nostrud et elit consequat labore aute eu. Exercitation aliquip est cupidatat enim elit ipsum esse.\r\n",
         "manufecturedDate": "2016-12-21T05:42:25 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 4,
             "rom": 16,
@@ -168,6 +180,8 @@
         "address": "572 Mill Avenue, Needmore, Utah, 946",
         "description": "Qui ex amet do quis. Proident Lorem ea voluptate aute laboris dolor ullamco duis aliquip anim irure id elit. Deserunt dolore elit sunt cupidatat aliquip velit et ipsum do minim sit mollit tempor. Consequat ullamco tempor nulla aliqua eu consequat excepteur excepteur. Nostrud amet Lorem do tempor ex commodo anim nostrud irure commodo.\r\n",
         "manufecturedDate": "2017-08-21T06:26:54 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 8,
             "rom": 128,
@@ -194,6 +208,8 @@
         "address": "765 Lombardy Street, Trexlertown, Arkansas, 7248",
         "description": "Sit laboris sit sunt esse cillum occaecat sit. Voluptate ea aliquip dolor sint minim deserunt excepteur laborum officia veniam cillum Lorem. Labore duis ut id ipsum proident aute deserunt aliqua. Ea eiusmod dolore est aute enim. Dolor ea adipisicing eu duis minim occaecat incididunt do ipsum in. Veniam et incididunt anim irure ullamco occaecat nulla laborum. Nisi sunt nostrud mollit laboris aliquip amet ipsum.\r\n",
         "manufecturedDate": "2014-04-08T09:55:30 -06:-30",
+        "isAddedToCart": false,
+        "addedItemCount": 0,
         "features": {
             "ram": 16,
             "rom": 128,

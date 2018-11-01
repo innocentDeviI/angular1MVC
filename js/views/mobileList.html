@@ -1,10 +1,16 @@
 <section id="main" ng-show="mobiles.length" ng-cloak class="container accordion" ng-init="add=false">
     <!-- <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
             <label for="toggle-all">Mark all as complete</label> -->
-    <h2>Mobiles</h2>
-    <h6 class="text-right more" data-toggle="modal" data-target="#editModal" ng-click="addClick(); add = true;">
-        Add Mobile
-    </h6>
+    <div class="header row">
+        <h2 class="col-md-4">Mobiles</h2>
+        <div class="col-md-4 text-center" ng-click="showCart()">
+            <i class="fa fa-shopping-cart"></i><sup class="ng-class: cartItemsCount > 0 ? 'badge green-bg' : ''">{{cartItemsCount
+                > 0 ? cartItemsCount : ''}}</sup>
+        </div>
+        <h4 class="col-md-4 more text-right" data-toggle="modal" data-target="#editModal" ng-click="addClick(); add = true;">
+            Add Mobile
+        </h4>
+    </div>
     <article class="row" ng-repeat="mobile in mobiles track by $index">
         <div class="card">
             <div class="card-header row" id="heading{{mobile.company}}">
@@ -32,7 +38,6 @@
                             data-target="#deleteModal"> Delete</li>
                     </ul>
                     <div>
-
                         <modals add="addMobile()" update="updateMobile()" delete="deleteMobile()" selectedmobile="selectedMobile"
                             modal="edit" addflag="add"></modals>
                     </div>
@@ -46,6 +51,15 @@
                     </div>
                     <div class="mobile-details col-md-8">
                         <div class="mobile-price">
+                            <div class="ng-class: mobile.isAddedToCart == true ? 'removefromcart active' : 'removefromcart' "
+                                title="Remove from Cart" ng-click="removeFromCart(mobile)" ng-show="mobile.isAvailable && mobile.addedItemCount > 0">
+                                <i class="fa fa-minus-square"></i>
+                            </div>
+                            <p class="addedCount" ng-show="mobile.isAddedToCart">{{mobile.addedItemCount}}</p>
+                            <div class="ng-class: mobile.isAddedToCart == true ? 'addtocart active' : 'addtocart' "
+                                title="Add to Cart" ng-click="addToCart(mobile)" ng-show="mobile.isAvailable">
+                                <i class="fa fa-plus-square"></i>
+                            </div>
                             <h2 class="green">{{mobile.discountedPrice}}</h2>
                             <h5 class="red strikethrough">{{mobile.price}}</h5>
                         </div>
