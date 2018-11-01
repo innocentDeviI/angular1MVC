@@ -37,6 +37,9 @@
 .card-header span span.fa.filled {
     color: #ffa500;
 }
+.header h4{
+    padding-top: 10px;
+}
 .more,.close {
     cursor: pointer;
     color: #666;
@@ -66,4 +69,42 @@
 .vertical-menu li:hover {
     background-color: #ccc;
     color: #212529;
+}
+.addtocart,.removefromcart {
+    cursor: pointer;
+    font-size: 28px;
+    float: right;
+    color: #666;
+    transition: .2s linear;
+}
+.addtocart:hover,
+.addtocart.active,
+.removefromcart:hover,
+.removefromcart.active {
+    font-size: 32px;
+    color: #212529;
+}
+.fa-shopping-cart,
+.fa-plus-square, 
+.fa-minus-square {
+    font-size: 38px;
+    padding-top: 5px;
+    color: #666;
+    cursor: pointer;
+}
+.header sup,
+.addtocart sup,
+.removefromcart sup {
+    top: 5px;
+    position: absolute;
+    transition: .2s linear;
+    font-size: 12px;
+}
+p.addedCount {
+    width: 40px;
+    display: block;
+    float: right;
+    font-size: 26px;
+    padding: 4px 0px;
+    text-align: center;
 }
