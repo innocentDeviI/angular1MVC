@@ -7,12 +7,14 @@
             <p class="ng-class: selectedMobile.isAvailable == true ? 'badge green-bg' : 'red-bg badge' ">{{selectedMobile.isAvailable
                 == true ? 'Available' : 'Not Available'}}</p>
         </h5>
-        <div class="text-right col-md-8">
+        <div class="col-md-4 text-center">
             <span ng-repeat="n in [1,2,3,4,5] track by $index">
                 <span class="ng-class: ($index >= selectedMobile.ratings) ? 'fa fa-star': 'fa fa-star filled'"></span>
             </span>
         </div>
-        
+        <div class="col-md-4 text-right">
+           <p><a ng-href="../../../../angular1MVC/" > << Back</a></p>
+        </div>
     </div>
     <div id="{{selectedMobile.company}}">
         <div class="card-body row">

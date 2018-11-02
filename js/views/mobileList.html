@@ -4,8 +4,8 @@
     <div class="header row">
         <h2 class="col-md-4">Mobiles</h2>
         <div class="col-md-4 text-center" ng-click="showCart()">
-            <i class="fa fa-shopping-cart"></i><sup class="ng-class: cartItemsCount > 0 ? 'badge green-bg' : ''">{{cartItemsCount
-                > 0 ? cartItemsCount : ''}}</sup>
+            <i class="fa fa-shopping-cart"></i><sup class="ng-class: cartItems.length > 0 ? 'badge green-bg' : ''">{{cartItems.length
+                > 0 ? cartItems.length : ''}}</sup>
         </div>
         <h4 class="col-md-4 more text-right" data-toggle="modal" data-target="#editModal" ng-click="addClick(); add = true;">
             Add Mobile
@@ -51,17 +51,17 @@
                     </div>
                     <div class="mobile-details col-md-8">
                         <div class="mobile-price">
-                            <div class="ng-class: mobile.isAddedToCart == true ? 'removefromcart active' : 'removefromcart' "
-                                title="Remove from Cart" ng-click="removeFromCart(mobile)" ng-show="mobile.isAvailable && mobile.addedItemCount > 0">
-                                <i class="fa fa-minus-square"></i>
-                            </div>
-                            <p class="addedCount" ng-show="mobile.isAddedToCart">{{mobile.addedItemCount}}</p>
                             <div class="ng-class: mobile.isAddedToCart == true ? 'addtocart active' : 'addtocart' "
                                 title="Add to Cart" ng-click="addToCart(mobile)" ng-show="mobile.isAvailable">
                                 <i class="fa fa-plus-square"></i>
                             </div>
-                            <h2 class="green">{{mobile.discountedPrice}}</h2>
-                            <h5 class="red strikethrough">{{mobile.price}}</h5>
+                            <p class="addedCount" ng-show="mobile.isAddedToCart">{{mobile.addedItemCount}}</p>
+                            <div class="ng-class: mobile.isAddedToCart == true ? 'removefromcart active' : 'removefromcart' "
+                                title="Remove from Cart" ng-click="removeFromCart(mobile)" ng-show="mobile.isAvailable && mobile.addedItemCount > 0">
+                                <i class="fa fa-minus-square"></i>
+                            </div>
+                            <h2 class="green">${{mobile.price}}</h2>
+                            <h5 class="red strikethrough">${{mobile.discountedPrice}}</h5>
                         </div>
                         <div class="warrenty">
                             <p> <strong>Warrenty: </strong>
@@ -72,7 +72,7 @@
                             <p> <strong>Description:</strong>
                                 <span>{{mobile.description}}</span>
                             </p>
-                            <p><a href="../../../../excercises/angular1MVC/mobile/{{mobile._id}}" data-id="{{mobile._id}}" ng-click="actionSelection($event)">View Details</a></p>
+                            <p><a href="../../../../angular1MVC/mobile/{{mobile._id}}" data-id="{{mobile._id}}" ng-click="actionSelection($event)">View Details</a></p>
                         </div>
                         <div class="features">
                             <p> <strong>Features:</strong> </p>

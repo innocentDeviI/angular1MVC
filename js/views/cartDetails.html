@@ -1,1 +1,82 @@
-<h1>Its working...</h1>
+<article class="container">
+    <div class="card">
+        <div class="card-header row">
+            <div class="col-md-12">
+                <div class="float-left">
+                    <h2>Shopping Cart</h2>
+                </div>
+                <div class="float-right" ng-click="showCart()">
+                    <i class="fa fa-shopping-cart"></i><sup class="ng-class: cartItems.length > 0 ? 'badge green-bg' : ''">{{cartItems.length
+                        > 0 ? cartItems.length : ''}}</sup>
+                </div>
+            </div>
+        </div>
+        <div class="card-body row" ng-repeat="mobile in cartItems track by $index">
+            <div class="mobile-image col-md-2">
+                <img ng-src="{{mobile.picture}}" width="100px">
+            </div>
+            <div class="mobile-details col-md-4">
+                <div class="mobileName">
+                    <h3>{{mobile.company}} {{mobile.modalName}}</h3>
+                    <p class="ng-class: mobile.isAvailable == true ? 'badge green-bg' : 'red-bg badge' ">{{mobile.isAvailable
+                        == true ? 'Available' : 'Not Available'}}</p>
+                    <div class="warrenty">
+                        <p> <strong>Warrenty: </strong>
+                            <span>{{mobile.warrenty}} - Years </span>
+                        </p>
+                    </div>
+                    <div class="release-date">
+                        <p> <strong>Release Date:</strong>
+                            <span>{{mobile.manufecturedDate}}</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p> <strong>Available Shades: </strong>
+                            <span class="ng-class: mobile.colors ">{{mobile.colors}}</span>
+                        </p>
+                    </div>
+                    <div class="btn-danger btn text-center" ng-click="removeFromCart()">Remove from Cart</div>
+                </div>
+            </div>
+            <div class="text-left col-md-2">
+                <span ng-repeat="n in [1,2,3,4,5] track by $index">
+                    <span class="ng-class: ($index >= mobile.ratings) ? 'fa fa-star': 'fa fa-star filled'"></span>
+                </span>
+            </div>
+            <div class="mobile-price col-md-2">
+                <h2 class="green">${{mobile.price}}</h2>
+                <h5 class="red strikethrough">${{mobile.discountedPrice}}</h5>
+            </div>
+            <div class="col-md-2">
+                <div class="quantity">
+                    <div class="ng-class: mobile.isAddedToCart == true ? 'addtocart active' : 'addtocart' " title="Add to Cart"
+                        ng-click="addToCart(mobile)" ng-show="mobile.isAvailable">
+                        <i class="fa fa-plus-square"></i>
+                    </div>
+                    <p class="addedCount" ng-show="mobile.isAddedToCart">{{mobile.addedItemCount}}</p>
+                    <div class="ng-class: mobile.isAddedToCart == true ? 'removefromcart active' : 'removefromcart' "
+                        title="Remove from Cart" ng-click="removeFromCart(mobile)" ng-show="mobile.isAvailable && mobile.addedItemCount > 0">
+                        <i class="fa fa-minus-square"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cartfooter">
+        <div class="card">
+            <div class="card-body">
+                <div class="subtotal text-right">
+                    <p><label><strong>Total : </strong><span class="green">${{total}}</span></label></p>
+                    <p><label><strong>Total Savings: </strong><span class="red">${{totalSavings}}</span></label></p>
+                    <button class="btn btn-success float-right text-center" ng-show="cartItems.length > 0? true : false"
+                        ng-click="">Checkout</button>
+                    <p class="float-left text-left">
+                        <a ng-href="../../../../angular1MVC/">
+                            << Back 
+                        </a> 
+                    </p> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+</article>

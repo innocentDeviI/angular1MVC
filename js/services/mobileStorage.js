@@ -2,7 +2,7 @@ angular.module('mobileMVC')
 	.factory('mobileStorage', function ($http, $injector) {
 		'use strict';
 
-		return $http.get('../../excercises/angular1MVC/js/services/data.json')
+		return $http.get('../../angular1MVC/js/services/data.json')
 			.then(function () {
 				return $injector.get('api');
 			});
@@ -13,6 +13,7 @@ angular.module('mobileMVC')
 
 		var store = {
 			mobiles: [],
+			cartItems: [],
 			selectedMobile: {},
 			setSelectedMobile: function(object) {
 				this.selectedMobile = object;
@@ -20,9 +21,14 @@ angular.module('mobileMVC')
 			getSelectedMobile: function() {
 				return this.selectedMobile;
 			},
-
+			setCartItem: function(mobile) {
+				this.cartItems.push(mobile);
+			},
+			getCartItems: function() {
+				return this.cartItems;
+			},
 			get: function () {
-				return $http.get('../../excercises/angular1MVC/js/services/data.json')
+				return $http.get('../../angular1MVC/js/services/data.json')
 					.then(function (resp) {
 						angular.copy(resp.data, store.mobiles);
 						return store.mobiles;

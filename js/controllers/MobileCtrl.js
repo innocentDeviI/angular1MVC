@@ -6,23 +6,34 @@
  * - exposes the model to the template and provides event handlers
  */
 angular.module('mobileMVC')
-	.controller('MobileCtrl', function MobileCtrl($scope, $routeParams, store) {
+	.controller('MobileCtrl', function MobileCtrl($scope, $routeParams, $location, store) {
 		'use strict';
 
-		var mobiles = $scope.mobiles = store.mobiles;
+		$scope.mobiles = store.mobiles;
 
 		$scope.newMobile = '';
 		$scope.editedMobile = null;
 		$scope.enableMenu = false;
 		$scope.selectedMobile = {};
-		$scope.cartItemsCount = 0;
+		$scope.cartItems = (store.getCartItems().length > 0) ? store.getCartItems() : [];
 
-		// Monitor the current route for changes and adjust the filter accordingly.
-		$scope.$on('$routeChangeSuccess', function () {
-			var status = $scope.status = $routeParams.status || '';
-			$scope.statusFilter = (status === 'active') ?
-				{ completed: false } : (status === 'completed') ?
-					{ completed: true } : {};
+		$scope.$on('$viewContentLoaded', function () {
+			
+			var _cartItems = Array.from($scope.cartItems);
+			var _mobiles = Array.from($scope.mobiles);
+			console.log(_mobiles);
+			if(_cartItems) {
+				for(var i=0; i<_cartItems.length; i++) {
+					for(var j=0; j<_mobiles.length;i++) {
+						if(_cartItems[i] && _cartItems[i]._id === _mobiles[j]._id) {
+							$scope.mobiles.splice(j,1);
+							//$scope.mobiles.push(_cartItems[i]);
+							break;
+						}
+					}
+				};
+			}
+			console.log(_mobiles);
 		});
 
 		$scope.actionSelection = function (evt) {
@@ -38,29 +49,31 @@ angular.module('mobileMVC')
 			$scope.selectedMobile = {};
 			$scope.selectedMobileId = null;
 		}
-		$scope.addToCart= function(mobile) {
-			if(mobile.isAvailable) {
-				if( mobile.isAddedToCart == false ) mobile.isAddedToCart = true;
-				$scope.cartItemsCount += 1;
+		$scope.addToCart = function (mobile) {
+			if (mobile.isAvailable) {
+				console.log(mobile)
+				if (mobile.isAddedToCart == false) mobile.isAddedToCart = true;
+				$scope.cartItems.push(mobile);
+				store.setCartItem(mobile);
 				mobile.addedItemCount += 1;
 			}
 		}
-		$scope.removeFromCart= function(mobile) {
-			if(mobile.isAvailable) {
-				if( mobile.isAddedToCart == false ) mobile.isAddedToCart = true;
-				if($scope.cartItemsCount > 0 && mobile.addedItemCount > 0) {
-					$scope.cartItemsCount -= 1;
+		$scope.removeFromCart = function (mobile) {
+			if (mobile.isAvailable) {
+				if (mobile.isAddedToCart == false) mobile.isAddedToCart = true;
+				if ($scope.cartItems.length > 0 && mobile.addedItemCount > 0) {
+					$scope.cartItems.length -= 1;
 					mobile.addedItemCount -= 1;
-					if(mobile.addedItemCount == 0)
-						mobile.isAddedToCart = false;	
+					if (mobile.addedItemCount == 0)
+						mobile.isAddedToCart = false;
 				} else {
 					mobile.isAddedToCart = false;
 				}
 
 			}
 		}
-		$scope.showCart = function() {
-			this.$router.navigate(['cartDetailsCtrl']);
+		$scope.showCart = function () {
+			$location.path('/showcart');
 		}
 		$scope.addMobile = function () {
 			var obj = {

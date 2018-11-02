@@ -10,7 +10,7 @@ angular.module('mobileMVC', ['ngRoute'])
 		'use strict';
 		$routeProvider
 			.when('/', {
-				templateUrl: '../../excercises/angular1MVC/js/views/mobileList.html',
+				templateUrl: '../../angular1MVC/js/views/mobileList.html',
 				controller: 'MobileCtrl',
 				resolve: {
 					store: function (mobileStorage) {
@@ -23,7 +23,7 @@ angular.module('mobileMVC', ['ngRoute'])
 				}
 			})
 			.when('/mobile/:id', {
-				templateUrl: '../../excercises/angular1MVC/js/views/mobileDetails.html',
+				templateUrl: '../../angular1MVC/js/views/mobileDetails.html',
 				controller: 'MobileDetailsCtrl',
 				bindings: {
 					mobile: '<'
@@ -38,18 +38,18 @@ angular.module('mobileMVC', ['ngRoute'])
 				}
 			})
 			.when('/showcart', {
-				templateUrl: '../../excercises/angular1MVC/js/views/cartDetails.html',
-				controller: 'cartDetailsCtrl',
+				templateUrl: '../../angular1MVC/js/views/cartDetails.html',
+				controller: 'CartDetailsCtrl',
 				bindings: {
-					mobile: '<'
+					mobile: '='
 				},
 				resolve: {
-					/* store: function (mobileStorage) {
+					store: function (mobileStorage) {
 						// Get the correct module (API or localStorage).
 						return mobileStorage.then(function (module) {
-							return module.getSelectedMobile(); // Fetch the selected mobile records in the background.
+							return module.getCartItems(); // Fetch the selected mobile records in the background.
 						});
-					} */
+					}
 				}
 			})
 			.otherwise({
