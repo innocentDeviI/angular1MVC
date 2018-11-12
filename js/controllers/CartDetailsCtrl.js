@@ -19,6 +19,7 @@ angular.module('mobileMVC')
         $scope.$on('$viewContentLoaded', function(){
             $scope.getTotal();
             $scope.cartItems = [...new Set($scope.cartItems)];
+            console.log($scope.cartItems);
         });
         $scope.addToCart = function (mobile) {
 			store.setCartItem(mobile);

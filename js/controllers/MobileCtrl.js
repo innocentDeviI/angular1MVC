@@ -16,7 +16,6 @@ angular.module('mobileMVC')
 		$scope.enableMenu = {};
 		$scope.cartItems = store.getCartItems()
 		$scope.$on('$viewContentLoaded', function () {
-			console.log("innn")
 		    mobiles = $scope.mobiles = $scope.mobiles || store.mobiles;
 
 			var _mobiles = $scope.mobiles;
@@ -24,8 +23,10 @@ angular.module('mobileMVC')
 				var res = $scope.mobiles.map(function(obj) {
 					return _mobiles.find(function(o) { 
 									return  o._id === obj._id 
-									}) || obj });
+									}) || {}
+					});
 				if(res.length > 0) $scope.mobiles = res;
+				console.log($scope.mobiles)
 			}
 		});
 		$scope.moreClick = function(name) {

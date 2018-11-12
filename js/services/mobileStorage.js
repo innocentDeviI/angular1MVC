@@ -24,7 +24,6 @@ angular.module('mobileMVC')
 			setCartItem: function(mobile) {
 				if (mobile.isAvailable) {
 					if (mobile.isAddedToCart == false) mobile.isAddedToCart = true;{
-						console.log(mobile)
 						mobile.addedItemCount += 1;
 						this.cartItems.push(mobile);
 					}
@@ -32,6 +31,10 @@ angular.module('mobileMVC')
 			},
 			getCartItems: function() {
 				return this.cartItems;
+			},
+			updateCart: function(updatedCart) {
+				this.cartItems = [];
+				return this.cartItems = updatedCart;
 			},
 			removeCartItem: function(mobile) {
 				var self = this.cartItems;
@@ -42,7 +45,7 @@ angular.module('mobileMVC')
 							itemsTobeRemoved.push(i);
 							if (item.isAvailable) {
 								if (item.isAddedToCart == false) item.isAddedToCart = true;
-								if (this.cartItems.length > 0 && item.addedItemCount > 0) {
+								if (self.length > 0 && item.addedItemCount > 0) {
 									item.addedItemCount -= 1;
 									if (item.addedItemCount == 0)
 									item.isAddedToCart = false;
@@ -57,12 +60,13 @@ angular.module('mobileMVC')
 					self.splice(itemsTobeRemoved[i],1);
 					break;
 				}
-				this.cartItems = self;
+				//this.cartItems = self;
 				console.log(this.cartItems)
 			},
 			get: function () {
 				return $http.get('../../angular1MVC/js/services/data.json')
 					.then(function (resp) {
+						if(store.mobiles.length == 0)
 						angular.copy(resp.data, store.mobiles);
 						return store.mobiles;
 					});
