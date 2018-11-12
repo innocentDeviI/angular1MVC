@@ -47,7 +47,7 @@ angular.module('mobileMVC', ['ngRoute'])
 					store: function (mobileStorage) {
 						// Get the correct module (API or localStorage).
 						return mobileStorage.then(function (module) {
-							return module.getCartItems(); // Fetch the selected mobile records in the background.
+							return module;
 						});
 					}
 				}

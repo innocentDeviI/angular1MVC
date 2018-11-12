@@ -48,6 +48,9 @@
 .close:hover {
     color: #212529;
 }
+table tr td strong{
+    text-transform: capitalize;
+}
 .vertical-menu {
     position: absolute;
     right: 0;

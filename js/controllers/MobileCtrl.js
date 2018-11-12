@@ -8,36 +8,34 @@
 angular.module('mobileMVC')
 	.controller('MobileCtrl', function MobileCtrl($scope, $routeParams, $location, store) {
 		'use strict';
-
-		$scope.mobiles = store.mobiles;
+		var mobiles = $scope.mobiles = $scope.mobiles;
 
 		$scope.newMobile = '';
 		$scope.editedMobile = null;
-		$scope.enableMenu = false;
 		$scope.selectedMobile = {};
-		$scope.cartItems = (store.getCartItems().length > 0) ? store.getCartItems() : [];
-
+		$scope.enableMenu = {};
+		$scope.cartItems = store.getCartItems()
 		$scope.$on('$viewContentLoaded', function () {
-			
-			var _cartItems = Array.from($scope.cartItems);
-			var _mobiles = Array.from($scope.mobiles);
-			console.log(_mobiles);
-			if(_cartItems) {
-				for(var i=0; i<_cartItems.length; i++) {
-					for(var j=0; j<_mobiles.length;i++) {
-						if(_cartItems[i] && _cartItems[i]._id === _mobiles[j]._id) {
-							$scope.mobiles.splice(j,1);
-							//$scope.mobiles.push(_cartItems[i]);
-							break;
-						}
-					}
-				};
-			}
-			console.log(_mobiles);
-		});
+			console.log("innn")
+		    mobiles = $scope.mobiles = $scope.mobiles || store.mobiles;
 
+			var _mobiles = $scope.mobiles;
+			if(_mobiles.length > 0) {
+				var res = $scope.mobiles.map(function(obj) {
+					return _mobiles.find(function(o) { 
+									return  o._id === obj._id 
+									}) || obj });
+				if(res.length > 0) $scope.mobiles = res;
+			}
+		});
+		$scope.moreClick = function(name) {
+			if($scope.enableMenu === name){
+				$scope.enableMenu = false;
+			} else {
+				$scope.enableMenu = name;
+			}
+		}
 		$scope.actionSelection = function (evt) {
-			$scope.enableMenu = false;
 			$scope.add = false;
 			$scope.selectedMobile = {};
 			$scope.selectedMobileId = $(evt.target).attr("data-id");
@@ -50,27 +48,10 @@ angular.module('mobileMVC')
 			$scope.selectedMobileId = null;
 		}
 		$scope.addToCart = function (mobile) {
-			if (mobile.isAvailable) {
-				console.log(mobile)
-				if (mobile.isAddedToCart == false) mobile.isAddedToCart = true;
-				$scope.cartItems.push(mobile);
-				store.setCartItem(mobile);
-				mobile.addedItemCount += 1;
-			}
+			store.setCartItem(mobile);
 		}
 		$scope.removeFromCart = function (mobile) {
-			if (mobile.isAvailable) {
-				if (mobile.isAddedToCart == false) mobile.isAddedToCart = true;
-				if ($scope.cartItems.length > 0 && mobile.addedItemCount > 0) {
-					$scope.cartItems.length -= 1;
-					mobile.addedItemCount -= 1;
-					if (mobile.addedItemCount == 0)
-						mobile.isAddedToCart = false;
-				} else {
-					mobile.isAddedToCart = false;
-				}
-
-			}
+			store.removeCartItem(mobile);	
 		}
 		$scope.showCart = function () {
 			$location.path('/showcart');
